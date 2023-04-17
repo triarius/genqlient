@@ -536,7 +536,7 @@ func (g *generator) convertDefinition(
 		// (If you had an entry in bindings, we would have returned it above.)
 		return nil, errorf(
 			pos, "unknown scalar %v: please add it to \"bindings\" in genqlient.yaml"+
-				"\nExample: https://github.com/Khan/genqlient/blob/main/example/genqlient.yaml#L12", def.Name)
+				"\nExample: https://github.com/triarius/genqlient/blob/main/example/genqlient.yaml#L12", def.Name)
 	default:
 		return nil, errorf(pos, "unexpected kind: %v", def.Kind)
 	}
@@ -643,7 +643,7 @@ func (g *generator) convertSelectionSet(
 				// selection, so we can put this error on the right line.
 				return nil, errorf(nil,
 					"genqlient doesn't allow duplicate fields with different selections "+
-						"(see https://github.com/Khan/genqlient/issues/64); "+
+						"(see https://github.com/triarius/genqlient/issues/64); "+
 						"duplicate field: %s.%s", containingTypedef.Name, field.JSONName)
 			default:
 				return nil, errorf(nil, "unexpected field-type: %T", field.GoType.Unwrap())
